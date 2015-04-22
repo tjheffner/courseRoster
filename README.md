@@ -8,7 +8,8 @@ Users can add/edit/remove courses and do the same for students.
 
 #### Setup instructions
 1. Clone this git repository
-2. Start the web app by opening index.html in your browser.
+2. Start a local server in the project directory (ex: `courses$ python -m SimpleHTTPServer` )
+3. Navigate to localhost:8000 in your browser.
 
 #### Copyright © 2015, Tanner Heffner
 
