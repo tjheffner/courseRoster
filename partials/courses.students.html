@@ -5,8 +5,23 @@
   <div ng-show="course.students.length">
     <h3>Student List for {{ course.name }}</h3>
     <ul>
-      <li ng-repeat="item in course.students">
+      <!-- <li ng-repeat="item in course.students">
         {{ item.name }}
+      </li> -->
+
+      <li ng-repeat="item in course.students">
+        <div ng-hide="editing">
+          {{ item.name }}
+          <button ng-click="editing = true" class="btn btn-warning btn-xs">Edit</button>
+          <button ng-click="deleteStudent(item)" class="btn btn-danger btn-xs">X</button>
+        </div>
+
+        <div class="form-group" ng-show="editing" ng-submit="editing = false">
+          <form class="form-inline" role="form">
+            <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required/>
+            <button class="btn btn-info btn-sm" type="submit">Save</button>
+          </form>
+        </div>
       </li>
     </ul>
   </div>

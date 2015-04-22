@@ -6,6 +6,12 @@ courseRoster.factory('CoursesFactory', function CoursesFactory() {
     factory.courseName = null;
   };
 
+  factory.deleteCourse = function(course) {
+    var index = factory.courses.indexOf(course);
+    factory.courses[index].students = [];
+    factory.courses.splice(index, 1);
+  };
+
   return factory;
 
 });
